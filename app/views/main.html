@@ -1,0 +1,11 @@
+<div class="row">
+  <div data-ng-repeat="(category, value) in MainCtrl.game">
+   <h4>
+    <a ng-href="#!/{{MainCtrl.game[category].link}}" data-ng-bind="category">
+      {{category}}
+    </a>
+    </h4>
+    <p data-ng-bind="MainCtrl.game[category].description">
+    </p>
+  </div>
+</div>
