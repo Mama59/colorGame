@@ -20,7 +20,6 @@ angular
     'ngAnimate',
     'ngAria'
   ])
-  .constant('_', window._)
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -37,11 +36,6 @@ angular
         templateUrl: 'views/color.html',
         controller: 'ColorCtrl',
         controllerAs: 'ColorCtrl'
-      })
-      .when('/image', {
-        templateUrl: 'views/image.html',
-        controller: 'ImageCtrl',
-        controllerAs: 'ImageCtrl'
       })
       .otherwise({
         redirectTo: '/'

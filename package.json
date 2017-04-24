@@ -1,7 +1,13 @@
 {
   "name": "colorgame",
   "private": true,
-  "devDependencies": {
+  "scripts": {
+    "test": "karma start test/karma.conf.js",
+    "start": "npm install && npm install -g bower && npm install -g grunt && bower install && grunt default"
+  },
+  "dependencies": {
+    "bower": "^1.8.0",
+    "grunt-karma": "^2.0.0",
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",
     "grunt-angular-templates": "^0.5.7",
@@ -33,11 +39,5 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "phantomjs-prebuilt": "^2.1.14",
     "time-grunt": "^1.0.0"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "karma start test/karma.conf.js"
   }
 }
