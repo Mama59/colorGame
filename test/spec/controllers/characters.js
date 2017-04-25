@@ -1,11 +1,11 @@
 'use strict';
 
-describe('Controller: ColorCtrl', function () {
+describe('Controller: CharactersCtrl', function () {
 
     // load the controller's module
     beforeEach(module('colorGameApp'));
 
-    var ColorCtrl,
+    var CharactersCtrl,
         scope;
 
     // Initialize the controller and a mock scope
@@ -22,21 +22,13 @@ describe('Controller: ColorCtrl', function () {
                 };
             };
         }
-        ColorCtrl = $controller('ColorCtrl', {
+        CharactersCtrl = $controller('CharactersCtrl', {
             $scope: scope
             // place here mocked dependencies
         });
     }));
 
-    afterAll(function () {
-            setTimeout(process.exit(), 1000);
-        }
-    );
-
-    describe('My test', function () {
-        it('should attach a list of colors to the scope', function () {
-            ColorCtrl.init();
-            expect(ColorCtrl.colors.length).toBe(10);
-        });
+    it('should attach a list of awesomeThings to the scope', function () {
+        expect(true).toBe(true);
     });
 });

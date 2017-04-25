@@ -1,10 +1,5 @@
-<div>
-  <md-switch class="md-primary pull-right " md-no-ink="" aria-label="Switch" ng-model="ColorCtrl.hardMode">
-    <span>Mix couleurs</span>
-  </md-switch>
-</div>
-<div id="circle" style="background:{{ColorCtrl.colorSelected.colorName}}"
-     data-ng-click="ColorCtrl.colorSelected.audio.play()">
+<div id="circle" style="background:{{ColorCtrl.selectedColor.colorName}}"
+     data-ng-click="ColorCtrl.playSound()">
 </div>
 <div class="col-sm-3" data-ng-repeat="color in ColorCtrl.colors">
   <h1>

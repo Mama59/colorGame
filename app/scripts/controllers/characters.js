@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name colorGameApp.controller:ColorCtrl
+ * @name colorGameApp.controller:CharactersCtrl
  * @description
- * # ColorCtrl
+ * # CharactersCtrl
  * Controller of the colorGameApp
  */
 angular.module('colorGameApp')
-    .controller('ColorCtrl', function (colorService) {
+    .controller('CharactersCtrl', function (colorService, $routeParams) {
         var self = this;
         self.actual = 0;
 
@@ -27,17 +27,18 @@ angular.module('colorGameApp')
             colorService.playSound(self.selectedColor);
         };
 
-        self.selectColor = function(){
-            self.selectedColor = colorService.randomElement({array : self.colors, actual : self.selectedColor});
-            self.colors =  colorService.shuffle(self.colors);
+        self.selectColor = function () {
+            self.selectedColor = colorService.randomElement({array: self.colors, actual: self.selectedColor});
+            self.colors = colorService.shuffle(self.colors);
             self.playSound();
         };
 
         self.init = function () {
             self.hardMode = true;
             self.audio = colorService.getAudio();
-
-            self.colors = colorService.getColors();
+            self.charactersType = $routeParams.charactersType || 'pawPatrol';
+            self.folder = 'images/' + self.charactersType;
+            self.colors = colorService.getColors({filter : self.charactersType});
 
             self.selectColor();
         };

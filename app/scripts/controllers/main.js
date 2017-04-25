@@ -20,6 +20,14 @@ angular.module('colorGameApp')
                 'Nomme les couleurs': {
                     description: 'Dit le nom de la couleur que tu vois',
                     link: 'color'
+                },
+                'Paw patrol': {
+                    description: 'Trouve les couleurs avec la pat patrouille',
+                    link: 'characters?charactersType=pawPatrol'
+                },
+                'Robocarpoli': {
+                    description: 'Trouve les couleurs avec les robocarpoli',
+                    link: 'characters?charactersType=robocarpoli'
                 }
             };
         }

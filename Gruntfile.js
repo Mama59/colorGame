@@ -13,11 +13,7 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
 
     // Automatically load required Grunt tasks
-    require('jit-grunt')(grunt, {
-        useminPrepare: 'grunt-usemin',
-        ngtemplates: 'grunt-angular-templates',
-        cdnify: 'grunt-google-cdn'
-    });
+    require('jit-grunt')(grunt);
 
     // Configurable paths for the application
     var appConfig = {
@@ -435,8 +431,8 @@ module.exports = function (grunt) {
             unit: {
                 configFile: 'test/karma.conf.js',
                 singleRun: true
-            },
-            vendor: 'bower_components/angular/angular.js'
+            }//,
+            //vendor: 'bower_components/angular/angular.js'
         }
     });
 
@@ -473,20 +469,15 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'wiredep',
-        'useminPrepare',
         'concurrent:dist',
         'postcss',
-        'ngtemplates',
         'concat',
         'ngAnnotate',
         'copy:dist',
-        'cdnify',
         'cssmin',
-        'uglify',
         'filerev',
         'usemin',
-        'htmlmin',
-        'uglify'
+        'htmlmin'
     ]);
 
     grunt.registerTask('default', [

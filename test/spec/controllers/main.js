@@ -16,4 +16,16 @@ describe('Controller: MainCtrl', function () {
             // place here mocked dependencies
         });
     }));
+
+    afterAll(function () {
+            setTimeout(process.exit(), 1000);
+        }
+    );
+
+
+    describe('My Main test', function () {
+        it('Expect true', function () {
+            expect(true).toBe(true);
+        });
+    });
 });

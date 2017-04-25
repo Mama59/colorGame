@@ -1,0 +1,12 @@
+<div class="col-xs-12">
+  <button data-ng-click="SoundCtrl.playSound()" class="btn btn-xl btn-primary">
+    <span class="glyphicon glyphicon-play-circle"></span>&nbsp;
+    REPLAY
+  </button>
+</div>
+<div class="col-sm-3" data-ng-repeat="color in SoundCtrl.colors">
+  <h1>
+    <a href data-ng-click="SoundCtrl.select(color)" style="color:{{color.colorName}}" data-ng-bind="color.name">
+    </a>
+  </h1>
+</div>
