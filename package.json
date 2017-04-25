@@ -3,7 +3,6 @@
   "private": true,
   "scripts": {
     "test": "npm install -g grunt && bower install && grunt test",
-    "test": "mocha",
     "postinstall": "npm install && npm install -g bower && npm install -g grunt && bower install && grunt default",
     "start": "node app/scripts/app.js"
   },
