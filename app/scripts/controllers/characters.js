@@ -36,6 +36,7 @@ angular.module('colorGameApp')
         self.init = function () {
             self.hardMode = true;
             self.audio = colorService.getAudio();
+            self.list = ['viceVersa', 'pawPatrol', 'robocarpoli'];
             self.charactersType = $routeParams.charactersType || 'pawPatrol';
             self.folder = 'images/' + self.charactersType;
             self.colors = colorService.getColors({filter : self.charactersType});
