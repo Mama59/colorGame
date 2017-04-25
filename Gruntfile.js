@@ -435,7 +435,8 @@ module.exports = function (grunt) {
             unit: {
                 configFile: 'test/karma.conf.js',
                 singleRun: true
-            }
+            },
+            vendor: 'bower_components/angular/angular.js'
         }
     });
 
