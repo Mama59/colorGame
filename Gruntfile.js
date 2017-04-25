@@ -13,7 +13,11 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
 
     // Automatically load required Grunt tasks
-    require('jit-grunt')(grunt);
+    require('jit-grunt')(grunt, {
+        useminPrepare: 'grunt-usemin',
+        ngtemplates: 'grunt-angular-templates',
+        cdnify: 'grunt-google-cdn'
+    });
 
     // Configurable paths for the application
     var appConfig = {
@@ -469,15 +473,19 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'wiredep',
+        'useminPrepare',
         'concurrent:dist',
         'postcss',
+        'ngtemplates',
         'concat',
         'ngAnnotate',
         'copy:dist',
+        'cdnify',
         'cssmin',
         'filerev',
         'usemin',
-        'htmlmin'
+        'htmlmin',
+        'uglify'
     ]);
 
     grunt.registerTask('default', [
