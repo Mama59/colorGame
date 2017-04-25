@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "test": "karma start test/karma.conf.js",
-    "start": "rm -r node_modules && rm -r bower_components && npm install && npm install -g bower && npm install -g grunt && bower install && grunt default"
+    "start": "rm -r node_modules && rm -r bower_component && npm install && npm install -g bower && npm install -g grunt && bower install && grunt default"
   },
   "dependencies": {
     "bower": "^1.8.0",
