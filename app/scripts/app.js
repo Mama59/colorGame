@@ -37,6 +37,11 @@ angular
               controller: 'CharactersCtrl',
               controllerAs: 'CharactersCtrl'
             })
+            .when('/memory', {
+              templateUrl: 'views/memory.html',
+              controller: 'MemoryCtrl',
+              controllerAs: 'MemoryCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

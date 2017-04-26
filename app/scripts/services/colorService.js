@@ -30,17 +30,24 @@ angular.module('colorGameApp')
         self.getColors = function (params) {
             var colorsSelected = [];
             for (var file in self.colors) {
-                if (!params || (params && params.filter && self.colors[file][params.filter])) {
-                    if (self.colors[file].fileName) {
-                        self.colors[file].audio = new Audio(self.audioFile + self.colors[file].fileName);
-                    }
+                var filter;
 
-                    if (self.colors[file].fileNameEn) {
-                        self.colors[file].audioEn = new Audio(self.audioFile + self.colors[file].fileNameEn);
-                    }
-                    if (params && params.filter) {
-                        self.colors[file].character = self.colors[file][params.filter];
-                    }
+                if (params && params.filter) {
+                    filter = self.categories[params.filter];
+                }
+                else {
+                    filter = self.categories.sound;
+                }
+
+                if (self.colors[file].fileName) {
+                    self.colors[file].audio = new Audio(self.audioFile + self.colors[file].fileName);
+                }
+
+                if (self.colors[file].fileNameEn) {
+                    self.colors[file].audioEn = new Audio(self.audioFile + self.colors[file].fileNameEn);
+                }
+                if (self.colors[file][filter]) {
+                    self.colors[file].character = self.colors[file][params.filter];
                     colorsSelected.push(self.colors[file]);
                 }
             }
@@ -85,6 +92,16 @@ angular.module('colorGameApp')
         };
 
         function init() {
+            self.categories = {
+                sound: "fileName",
+                soundEn: "fileNameEn",
+                pawPatrol: "pawPatrol",
+                robocarpoli: "robocarpoli",
+                viceVersa: "viceVersa",
+                color: 'name',
+                colorEn: 'nameEn'
+            };
+
             self.colors = [
                 {
                     name: 'rouge',
