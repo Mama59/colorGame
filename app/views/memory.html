@@ -2,7 +2,6 @@
     <img data-ng-if="!color.showed" height="150px"
          ng-src="{{MemoryCtrl.categories[MemoryCtrl.charactersType].gameImg}}"
          alt="Image" data-ng-click="MemoryCtrl.selectMemory($index)"/>
-
     <div data-ng-if="color.showed">
         <img data-ng-if="MemoryCtrl.isImage" height="150px"
              ng-src="{{MemoryCtrl.folder+color.character}}"
