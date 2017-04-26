@@ -30,8 +30,12 @@ angular.module('colorGameApp')
         self.selectColor = function () {
             self.selectedColor = colorService.randomElement({array: self.colors, actual: self.selectedColor});
             self.colors = colorService.shuffle(self.colors);
+
             if (self.charactersType === 'colorName') {
                 self.selectedColor.class = "circle";
+            }
+            else{
+                self.selectedColor.class = "";
             }
             self.playSound();
         };
