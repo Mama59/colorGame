@@ -13,6 +13,13 @@ angular.module('colorGameApp')
         self.initMemory = function () {
             self.memory = [];
             for (var index in self.colors) {
+                if (self.charactersType === 'color') {
+                    self.colors[index].class = 'circle';
+                }
+                else {
+                    self.colors[index].class = "";
+                }
+
                 var color = angular.copy(self.colors[index]);
                 var color2 = angular.copy(self.colors[index]);
                 color.id = index;
@@ -55,6 +62,10 @@ angular.module('colorGameApp')
             }
         };
 
+        self.isImg = function () {
+            return !(self.charactersType === 'color' || self.charactersType === 'sound');
+        };
+
         function init() {
             self.memorySelected;
             self.colors = colorService.getColors({filter: self.charactersType});
@@ -63,6 +74,7 @@ angular.module('colorGameApp')
             self.colors = colorService.getColors({filter: self.charactersType});
             self.categories = colorService.getCategories();
             self.initMemory();
+            self.isImage = self.isImg();
         }
 
         init();
