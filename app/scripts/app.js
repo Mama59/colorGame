@@ -33,19 +33,19 @@ angular
                 controllerAs: 'AboutCtrl'
             })
             .when('/characters', {
-              templateUrl: 'views/characters.html',
-              controller: 'CharactersCtrl',
-              controllerAs: 'CharactersCtrl'
+                templateUrl: 'views/characters.html',
+                controller: 'CharactersCtrl',
+                controllerAs: 'CharactersCtrl'
             })
             .when('/memory', {
-              templateUrl: 'views/memory.html',
-              controller: 'MemoryCtrl',
-              controllerAs: 'MemoryCtrl'
+                templateUrl: 'views/memory.html',
+                controller: 'MemoryCtrl',
+                controllerAs: 'MemoryCtrl'
             })
             .when('/color', {
-              templateUrl: 'views/color.html',
-              controller: 'ColorCtrl',
-              controllerAs: 'ColorCtrl'
+                templateUrl: 'views/color.html',
+                controller: 'ColorCtrl',
+                controllerAs: 'ColorCtrl'
             })
             .otherwise({
                 redirectTo: '/'
