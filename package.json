@@ -4,7 +4,7 @@
   "scripts": {
     "test": "npm install -g grunt && bower install && grunt test",
     "postinstall": "npm install && npm install -g bower && npm install -g grunt && bower install && grunt default",
-    "start": "node app/scripts/app.js"
+    "start": "grunt serve"
   },
   "dependencies": {
     "bower": "^1.8.0",

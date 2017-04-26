@@ -94,7 +94,7 @@ angular.module('colorGameApp')
                     fileNameEn: 'red.mp3',
                     pawPatrol: 'marcus.jpeg',
                     robocarpoli: 'roy.jpg',
-                    viceVersa:'colere.jpeg.'
+                    viceVersa: 'colere.jpeg'
                 },
                 {
                     name: 'bleu',
@@ -104,7 +104,7 @@ angular.module('colorGameApp')
                     fileNameEn: 'blue.mp3',
                     pawPatrol: 'chase.jpeg',
                     robocarpoli: 'poli.jpg',
-                    viceVersa:'tristess.jpeg'
+                    viceVersa: 'tristess.jpeg'
                 },
                 {
                     name: 'jaune',
@@ -113,7 +113,7 @@ angular.module('colorGameApp')
                     fileName: 'jaune.mp3',
                     fileNameEn: 'yellow.mp3',
                     pawPatrol: 'ruben.jpeg',
-                    viceVersa:'joie.jpeg'
+                    viceVersa: 'joie.jpeg'
                 },
                 {
                     name: 'vert',
@@ -123,7 +123,7 @@ angular.module('colorGameApp')
                     fileNameEn: 'green.mp3',
                     pawPatrol: 'rocky.jpeg',
                     robocarpoli: 'heli.jpg',
-                    viceVersa:'degout.jpeg'
+                    viceVersa: 'degout.jpeg'
                 },
                 {
                     name: 'gris',
@@ -146,7 +146,7 @@ angular.module('colorGameApp')
                     colorName: 'purple',
                     fileName: 'violet.mp3',
                     fileNameEn: 'violetEn.mp3',
-                    viceVersa:'peur.jpeg'
+                    viceVersa: 'peur.jpeg'
                 },
                 {
                     name: 'orange',
