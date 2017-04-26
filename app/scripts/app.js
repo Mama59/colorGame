@@ -42,6 +42,11 @@ angular
               controller: 'MemoryCtrl',
               controllerAs: 'MemoryCtrl'
             })
+            .when('/color', {
+              templateUrl: 'views/color.html',
+              controller: 'ColorCtrl',
+              controllerAs: 'ColorCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

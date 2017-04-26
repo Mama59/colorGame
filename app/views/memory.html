@@ -1,2 +1,10 @@
-<p>This is the memory view.</p>
-{{MemoryCtrl.colors}}
+<div class="col-xs-3" data-ng-repeat="color in MemoryCtrl.memory track by $index">
+
+    <img data-ng-if="!color.showed" height="150px"
+         ng-src="{{MemoryCtrl.categories[MemoryCtrl.charactersType].gameImg}}"
+         alt="Image" data-ng-click="MemoryCtrl.selectMemory($index)"/>
+
+    <img data-ng-if="color.showed" height="150px"
+         ng-src="{{MemoryCtrl.folder+color.character}}"
+         alt="Image" data-ng-click="MemoryCtrl.selectMemory($index)"/>
+</div>

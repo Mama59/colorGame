@@ -33,10 +33,10 @@ angular.module('colorGameApp')
                 var filter;
 
                 if (params && params.filter) {
-                    filter = self.categories[params.filter];
+                    filter = self.categories[params.filter].key;
                 }
                 else {
-                    filter = self.categories.sound;
+                    filter = self.categories.sound.key;
                 }
 
                 if (self.colors[file].fileName) {
@@ -81,6 +81,15 @@ angular.module('colorGameApp')
             return array[Math.floor(Math.random() * array.length)];
         }
 
+        self.getCategories = function () {
+            return {
+                pawPatrol: {key: "pawPatrol", gameImg: self.imageFolder + 'pawPatrol/game.png'},
+                robocarpoli: {key: "robocarpoli", gameImg: self.imageFolder + 'robocarpoli/game.jpg'},
+                viceVersa: {key: "viceVersa", gameImg: self.imageFolder + 'viceVersa/game.jpg'},
+                color: {key: 'name', gameImg: self.imageFolder + 'question.jpg'}
+            };
+        };
+
         self.randomElement = function (opts) {
             var array = opts.array;
             var random;
@@ -92,14 +101,15 @@ angular.module('colorGameApp')
         };
 
         function init() {
+            self.imageFolder = 'images/';
             self.categories = {
-                sound: "fileName",
-                soundEn: "fileNameEn",
-                pawPatrol: "pawPatrol",
-                robocarpoli: "robocarpoli",
-                viceVersa: "viceVersa",
-                color: 'name',
-                colorEn: 'nameEn'
+                sound: {key: "fileName"},
+                soundEn: {key: "fileNameEn"},
+                pawPatrol: {key: "pawPatrol", gameImg: self.imageFolder + 'pawPatrol/game.png'},
+                robocarpoli: {key: "robocarpoli", gameImg: self.imageFolder + 'robocarpoli/game.jpg'},
+                viceVersa: {key: "viceVersa", gameImg: self.imageFolder + 'viceVersa/game.jpg'},
+                color: {key: 'name', gameImg: self.imageFolder + 'question.jpg'},
+                colorEn: {key: 'nameEn'}
             };
 
             self.colors = [

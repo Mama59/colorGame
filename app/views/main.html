@@ -1,13 +1,10 @@
-<div class="row">
-    <div data-ng-repeat="game in MainCtrl.games">
-        <h1 data-ng-bind="game.name"></h1>
-        <div data-ng-repeat="subGame in game.list">
-            <h4>
-                <a ng-href="#!/{{subGame.link}}">
-                    {{subGame.name}}
-                </a>
-            </h4>
-        </div>
-        </p>
+<div class="row" data-ng-repeat="game in [{name : 'Color', link :'characters'}, {name : 'Memory', link : 'memory'}]">
+    <h2 data-ng-bind="game.name"></h2>
+    <div data-ng-repeat="(key, value) in MainCtrl.categories">
+        <h3>
+            <a ng-href="#!/{{game.link}}?charactersType={{key}}">
+                {{key}}
+            </a>
+        </h3>
     </div>
 </div>
