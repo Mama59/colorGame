@@ -9,6 +9,7 @@
 
 module.exports = function (grunt) {
 
+    var pkg = grunt.file.readJSON('package.json');
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
@@ -26,7 +27,7 @@ module.exports = function (grunt) {
     };
 
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+        pkg: pkg,
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -40,8 +41,7 @@ module.exports = function (grunt) {
 
     // Define the configuration for all the tasks
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        // Project settings
+        pkg: pkg,        // Project settings
         yeoman: appConfig,
         // Watches files for changes and runs tasks based on the changed files
         watch: {
@@ -351,6 +351,33 @@ module.exports = function (grunt) {
                 dest: '.tmp/templateCache.js'
             }
         },
+        buildcontrol: {
+            options: {
+                dir: 'dist',
+                commit: true,
+                push: true,
+                message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+            },
+            pages: {
+                options: {
+                    remote: 'git@github.com:Mama59/colorGame.git',
+                    branch: 'gh-pages'
+                }
+            },
+            heroku: {
+                options: {
+                    remote: 'git@heroku.com:game-color-for-children.git',
+                    branch: 'master',
+                    tag: pkg.version
+                }
+            },
+            local: {
+                options: {
+                    remote: '../',
+                    branch: 'build'
+                }
+            }
+        },
 
         // ng-annotate tries to make the code safe for minification automatically
         // by using the Angular long form for dependency injection.
@@ -422,6 +449,8 @@ module.exports = function (grunt) {
             'watch'
         ]);
     });
+
+    grunt.loadNpmTasks('grunt-build-control');
 
     grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
         grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
