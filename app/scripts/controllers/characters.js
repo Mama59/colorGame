@@ -30,7 +30,14 @@ angular.module('colorGameApp')
         self.selectColor = function () {
             self.selectedColor = colorService.randomElement({array: self.colors, actual: self.selectedColor});
             self.colors = colorService.shuffle(self.colors);
+            if (self.charactersType === 'colorName') {
+                self.selectedColor.class = "circle";
+            }
             self.playSound();
+        };
+
+        self.isImg = function () {
+            return !(self.charactersType === 'fileName' || self.charactersType === 'colorName');
         };
 
         self.init = function () {
@@ -39,9 +46,9 @@ angular.module('colorGameApp')
             self.list = ['viceVersa', 'pawPatrol', 'robocarpoli'];
             self.charactersType = $routeParams.charactersType || 'pawPatrol';
             self.folder = 'images/' + self.charactersType;
-            self.colors = colorService.getColors({filter : self.charactersType});
-
+            self.colors = colorService.getColors({filter: self.charactersType});
             self.selectColor();
+            self.isImage = self.isImg();
         };
 
         self.init();

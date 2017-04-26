@@ -32,11 +32,6 @@ angular
                 controller: 'AboutCtrl',
                 controllerAs: 'AboutCtrl'
             })
-            .when('/color', {
-                templateUrl: 'views/color.html',
-                controller: 'ColorCtrl',
-                controllerAs: 'ColorCtrl'
-            })
             .when('/characters', {
               templateUrl: 'views/characters.html',
               controller: 'CharactersCtrl',

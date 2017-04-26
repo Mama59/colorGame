@@ -9,7 +9,7 @@ body {
   padding: 0;
 }
 
-#circle {
+.circle {
   width: 80%;
   height: 150px;
   -webkit-border-radius: 25px;

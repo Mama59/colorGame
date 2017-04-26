@@ -1,14 +1,28 @@
-<div class="col-xs-12" data-ng-if="CharactersCtrl.charactersType !== 'fileName'">
+<div class="col-xs-12" data-ng-if="CharactersCtrl.isImage">
     <img data-ng-click="CharactersCtrl.playSound()" height="200px"
          ng-src="{{CharactersCtrl.folder+'/'+CharactersCtrl.selectedColor.character}}"
          alt="Image paw patrol"/>
 </div>
-<div class="col-xs-12" data-ng-if="CharactersCtrl.charactersType === 'fileName'">
-    <button class="btn btn-default" data-ng-click="CharactersCtrl.playSound()" ><span class="glyphicon glyphicon-play-circle"></span>&nbsp;REPLAY</button>
+<div data-ng-if="!CharactersCtrl.isImage" data-ng-click="CharactersCtrl.playSound()">
+    <div
+         ng-class="CharactersCtrl.selectedColor.class"
+         ng-style="{ background : CharactersCtrl.selectedColor.class ? CharactersCtrl.selectedColor.colorName : ''}"
+         class="col-xs-12"
+         data-ng-if="CharactersCtrl.selectedColor.class">
+    </div>
+    <div  data-ng-if="!CharactersCtrl.selectedColor.class">
+        <button class="btn btn-default">
+            <span class="glyphicon glyphicon-play-circle"></span>
+            &nbsp;REPLAY
+        </button>
+
+    </div>
 </div>
+
 <div class="col-sm-3" data-ng-repeat="color in CharactersCtrl.colors">
     <h1>
-        <a href data-ng-click="CharactersCtrl.select(color)" style="color:{{color.colorName}}" data-ng-bind="color.name">
+        <a href data-ng-click="CharactersCtrl.select(color)" style="color:{{color.colorName}}"
+           data-ng-bind="color.name">
         </a>
     </h1>
 </div>
