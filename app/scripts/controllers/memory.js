@@ -67,7 +67,6 @@ angular.module('colorGameApp')
         };
 
         function init() {
-            self.memorySelected;
             self.gameType = $routeParams.gameType || 'colors';
             self.gameFilter = $routeParams.gameFilter || 'pawPatrol';
             self.folder = 'images/' + self.gameFilter + '/';

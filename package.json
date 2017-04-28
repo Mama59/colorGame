@@ -2,9 +2,8 @@
   "name": "colorgame",
   "private": true,
   "scripts": {
-    "heroku-prebuild": "npm install && npm install -g grunt && bower install ",
     "test": "npm install -g grunt && bower install && grunt test",
-    "start": "grunt build"
+    "start": "npm install && npm install -g grunt && bower install  && grunt build"
   },
 
   "dependencies": {
