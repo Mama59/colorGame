@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "test": "npm install -g grunt && bower install && grunt test",
-    "start": "npm install && npm install -g grunt && bower install  && grunt build"
+    "start": "npm install && npm install -g grunt && bower install  && grunt build && grunt serve"
   },
 
   "dependencies": {
