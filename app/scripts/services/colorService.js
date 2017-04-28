@@ -27,6 +27,10 @@ angular.module('colorGameApp')
             return audio;
         };
 
+        self.getNumbers = function () {
+
+        };
+
         self.getColors = function (params) {
             var colorsSelected = [];
             for (var file in self.colors) {
@@ -40,11 +44,11 @@ angular.module('colorGameApp')
                 }
 
                 if (self.colors[file].fileName) {
-                    self.colors[file].audio = new Audio(self.audioFile + self.colors[file].fileName);
+                    self.colors[file].audio = new Audio(self.audioFile + self.colorsFile + self.colors[file].fileName);
                 }
 
                 if (self.colors[file].fileNameEn) {
-                    self.colors[file].audioEn = new Audio(self.audioFile + self.colors[file].fileNameEn);
+                    self.colors[file].audioEn = new Audio(self.audioFile + self.colorsFile + self.colors[file].fileNameEn);
                 }
                 if (self.colors[file][filter]) {
                     self.colors[file].character = self.colors[file][params.filter];
@@ -102,6 +106,7 @@ angular.module('colorGameApp')
 
         function init() {
             self.imageFolder = 'images/';
+            self.colorsFile = 'colors/'
             self.categories = {
                 sound: {key: "fileName"},
                 soundEn: {key: "fileNameEn"},
