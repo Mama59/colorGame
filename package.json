@@ -2,9 +2,11 @@
   "name": "colorgame",
   "private": true,
   "scripts": {
+    "heroku-prebuild": "npm install && npm install -g grunt && bower install ",
     "test": "npm install -g grunt && bower install && grunt test",
-    "start": "npm install -g grunt && bower install && grunt serve"
+    "start": "grunt build"
   },
+
   "dependencies": {
     "bower": "^1.8.0",
     "grunt-karma": "^2.0.0",
@@ -38,9 +40,7 @@
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.4",
     "phantomjs-prebuilt": "^2.1.14",
-    "time-grunt": "^1.0.0"
-  },
-  "devDependencies": {
+    "time-grunt": "^1.0.0",
     "grunt-build-control": "^0.7.1"
   }
 }
