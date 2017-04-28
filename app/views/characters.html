@@ -1,16 +1,16 @@
 <div align="center" class="col-xs-12" data-ng-if="CharactersCtrl.isImage">
     <img data-ng-click="CharactersCtrl.playSound()" height="200px"
-         ng-src="{{CharactersCtrl.folder+'/'+CharactersCtrl.selectedColor.character}}"
-         alt="Image paw patrol"/>
+         ng-src="{{CharactersCtrl.folder+'/'+CharactersCtrl.selectedGame.character}}"
+         alt="Image"/>
 </div>
 <div align="center" data-ng-if="!CharactersCtrl.isImage" data-ng-click="CharactersCtrl.playSound()">
     <div
-         ng-class="CharactersCtrl.selectedColor.class"
-         ng-style="{ background : CharactersCtrl.selectedColor.class ? CharactersCtrl.selectedColor.colorName : ''}"
+         ng-class="CharactersCtrl.selectedGame.class"
+         ng-style="{ background : CharactersCtrl.selectedGame.class ? CharactersCtrl.selectedGame.colorName : ''}"
          class="col-xs-12"
-         data-ng-if="CharactersCtrl.selectedColor.class">
+         data-ng-if="CharactersCtrl.selectedGame.class">
     </div>
-    <div  data-ng-if="!CharactersCtrl.selectedColor.class">
+    <div  data-ng-if="!CharactersCtrl.selectedGame.class">
         <button class="btn btn-default">
             <span class="glyphicon glyphicon-play-circle"></span>
             &nbsp;REPLAY
@@ -19,10 +19,10 @@
     </div>
 </div>
 
-<div class="col-sm-3" data-ng-repeat="color in CharactersCtrl.colors">
+<div class="col-sm-3" data-ng-repeat="game in CharactersCtrl.games">
     <h1>
-        <a href data-ng-click="CharactersCtrl.select(color)" style="color:{{color.colorName}}"
-           data-ng-bind="color.name">
+        <a href data-ng-click="CharactersCtrl.select(game)" style="color:{{game.colorName}}"
+           data-ng-bind="game.name">
         </a>
     </h1>
 </div>

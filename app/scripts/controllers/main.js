@@ -8,11 +8,12 @@
  * Controller of the colorGameApp
  */
 angular.module('colorGameApp')
-    .controller('MainCtrl', function (colorService) {
+    .controller('MainCtrl', function (gameService) {
         var self = this;
 
         function init() {
-            self.categories = colorService.getCategories();
+            self.categories = gameService.getCategories();
+            console.log(self.categories);
         }
         init();
     });

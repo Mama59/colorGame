@@ -8,13 +8,13 @@
  * Controller of the colorGameApp
  */
 angular.module('colorGameApp')
-    .controller('CharactersCtrl', function (colorService, $routeParams) {
+    .controller('CharactersCtrl', function (gameService, $routeParams) {
         var self = this;
         self.actual = 0;
 
         self.select = function (color) {
 
-            if (color === self.selectedColor) {
+            if (color === self.selectedGame) {
                 self.selectColor();
             }
             else {
@@ -24,36 +24,37 @@ angular.module('colorGameApp')
         };
 
         self.playSound = function () {
-            colorService.playSound(self.selectedColor);
+            gameService.playSound(self.selectedGame);
         };
 
         self.selectColor = function () {
-            self.selectedColor = colorService.randomElement({array: self.colors, actual: self.selectedColor});
-            self.colors = colorService.shuffle(self.colors);
+            self.selectedGame = gameService.randomElement({array: self.games, actual: self.selectedGame});
+            self.games = gameService.shuffle(self.games);
 
-            if (self.charactersType === 'color') {
-                self.selectedColor.class = "circle";
+            if (self.gameFilter === 'color') {
+                self.selectedGame.class = "circle";
             }
-            else{
-                self.selectedColor.class = "";
+            else {
+                self.selectedGame.class = "";
             }
             self.playSound();
         };
 
         self.isImg = function () {
-            return !(self.charactersType === 'color' || self.charactersType === 'sound');
+            return !(self.gameFilter === 'color' || self.gameFilter === 'sound');
         };
 
         self.init = function () {
             self.hardMode = true;
-            self.audio = colorService.getAudio();
+            self.audio = gameService.getAudio();
             self.list = ['viceVersa', 'pawPatrol', 'robocarpoli'];
-            self.charactersType = $routeParams.charactersType || 'pawPatrol';
-            self.folder = 'images/' + self.charactersType;
-            self.colors = colorService.getColors({filter: self.charactersType});
+            self.gameType = $routeParams.gameType || 'colors';
+            self.gameFilter = $routeParams.gameFilter || 'pawPatrol';
+            self.folder = 'images/' + self.gameFilter;
+            self.games = gameService.getGames({filter: self.gameFilter, type: self.gameType});
+            console.log(self.games);
             self.selectColor();
             self.isImage = self.isImg();
         };
-
         self.init();
     });

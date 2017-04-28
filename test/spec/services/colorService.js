@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: colorService', function () {
+describe('Service: gameService', function () {
 
   // load the service's module
   beforeEach(module('colorGameApp'));
 
   // instantiate service
-  var colorService;
-  beforeEach(inject(function (_colorService_) {
-    colorService = _colorService_;
+  var gameService;
+  beforeEach(inject(function (_gameService_) {
+    gameService = _gameService_;
   }));
 
   it('should do something', function () {
-    expect(!!colorService).toBe(true);
+    expect(!!gameService).toBe(true);
   });
 
 });

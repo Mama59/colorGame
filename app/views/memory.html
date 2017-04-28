@@ -1,6 +1,7 @@
 <div class="col-xs-3" data-ng-repeat="color in MemoryCtrl.memory track by $index">
     <img data-ng-if="!color.showed" height="150px"
-         ng-src="{{MemoryCtrl.categories[MemoryCtrl.charactersType].gameImg}}"
+         {{MemoryCtrl.categories[MemoryCtrl.gameFilter].gameImg}}
+         ng-src="{{MemoryCtrl.categories[MemoryCtrl.gameType][MemoryCtrl.gameFilter].gameImg}}"
          alt="Image" data-ng-click="MemoryCtrl.selectMemory($index)"/>
     <div data-ng-if="color.showed">
         <img data-ng-if="MemoryCtrl.isImage" height="150px"
