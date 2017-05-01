@@ -41,7 +41,7 @@ angular.module('colorGameApp')
         };
 
         self.isImg = function () {
-            return !(self.gameFilter === 'color' || self.gameFilter === 'sound');
+            return !(self.gameFilter === 'color' || self.gameFilter === 'sound' || self.gameType !== 'colors');
         };
 
         self.init = function () {
@@ -52,7 +52,6 @@ angular.module('colorGameApp')
             self.gameFilter = $routeParams.gameFilter || 'pawPatrol';
             self.folder = 'images/' + self.gameFilter;
             self.games = gameService.getGames({filter: self.gameFilter, type: self.gameType});
-            console.log(self.games);
             self.selectColor();
             self.isImage = self.isImg();
         };

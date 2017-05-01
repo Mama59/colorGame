@@ -1,10 +1,10 @@
-<div class="row" data-ng-repeat="game in [{name : 'Listen', link :'characters'}, {name : 'Memory', link : 'memory'}]">
+<div class="row col-xs-6" data-ng-repeat="game in [{name : 'Listen', link :'characters'}, {name : 'Memory', link : 'memory'}]">
     <h1 data-ng-bind="game.name"></h1>
     <div data-ng-repeat="(type, category) in MainCtrl.categories">
     <h2 data-ng-bind="type"></h2>
         <h3>
             <div data-ng-repeat="(key, value) in category">
-                <a ng-href="#!/{{game.link}}?gameFilter={{key}}&&gameType={{type}}">
+                <a ng-href="#!/{{game.link}}?gameFilter={{key}}&gameType={{type}}">
                     {{key}}
                 </a>
             </div>

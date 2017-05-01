@@ -34,6 +34,7 @@ angular.module('colorGameApp')
         self.getGames = function (params) {
             var colorsSelected = [];
             var type = params.type || 'colors';
+            var gamesFile = type ? type + "/" : self.gamesFile;
             for (var file in self.games[type]) {
                 var filter;
                 if (params && params.type && params.filter && self.categories[type][params.filter]) {
@@ -44,11 +45,11 @@ angular.module('colorGameApp')
                 }
 
                 if (self.games[type][file].fileName) {
-                    self.games[type][file].audio = new Audio(self.audioFile + self.gamesFile + self.games[type][file].fileName);
+                    self.games[type][file].audio = new Audio(self.audioFile + gamesFile + self.games[type][file].fileName);
                 }
 
                 if (self.games[type][file].fileNameEn) {
-                    self.games[type][file].audioEn = new Audio(self.audioFile + self.gamesFile + self.games[type][file].fileNameEn);
+                    self.games[type][file].audioEn = new Audio(self.audioFile + gamesFile + self.games[type][file].fileNameEn);
                 }
                 if (self.games[type][file][filter]) {
                     self.games[type][file].character = self.games[type][file][params.filter];
@@ -190,155 +191,162 @@ angular.module('colorGameApp')
                         colorName: 'maroon'
                     }
                 ],
-                letters: [
+                letters :[
                     {
-                        lettre: 'A',
-                        fileName: ''
+                        name:'B',
+                        fileName:'BFr.mp3'
                     },
                     {
-                        lettre: 'B',
-                        fileName: ''
+                        name:'C',
+                        fileName:'CFr.mp3'
                     },
                     {
-                        lettre: 'C',
-                        fileName: ''
+                        name:'E',
+                        fileName:'EFr.mp3'
                     },
                     {
-                        lettre: 'D',
-                        fileName: ''
+                        name:'F',
+                        fileName:'FFr.mp3'
                     },
                     {
-                        lettre: 'E',
-                        fileName: ''
+                        name:'G',
+                        fileName:'GFr.mp3'
                     },
                     {
-                        lettre: 'F',
-                        fileName: ''
+                        name:'H',
+                        fileName:'HFr.mp3'
                     },
                     {
-                        lettre: 'G',
-                        fileName: ''
+                        name:'J',
+                        fileName:'JFr.mp3'
                     },
                     {
-                        lettre: 'H',
-                        fileName: ''
+                        name:'K',
+                        fileName:'KFr.mp3'
                     },
                     {
-                        lettre: 'I',
-                        fileName: ''
+                        name:'L',
+                        fileName:'LFr.mp3'
                     },
                     {
-                        lettre: 'J',
-                        fileName: ''
+                        name:'M',
+                        fileName:'MFr.mp3'
                     },
                     {
-                        lettre: 'K',
-                        fileName: ''
+                        name:'N',
+                        fileName:'NFr.mp3'
                     },
                     {
-                        lettre: 'L',
-                        fileName: ''
+                        name:'O',
+                        fileName:'OFr.mp3'
                     },
                     {
-                        lettre: 'M',
-                        fileName: ''
+                        name:'P',
+                        fileName:'PFr.mp3'
                     },
                     {
-                        lettre: 'N',
-                        fileName: ''
+                        name:'R',
+                        fileName:'RFr.mp3'
                     },
                     {
-                        lettre: 'O',
-                        fileName: ''
+                        name:'S',
+                        fileName:'SFr.mp3'
                     },
                     {
-                        lettre: 'P',
-                        fileName: ''
+                        name:'T',
+                        fileName:'TFr.mp3'
                     },
                     {
-                        lettre: 'Q',
-                        fileName: ''
+                        name:'V',
+                        fileName:'VFr.mp3'
                     },
                     {
-                        lettre: 'R',
-                        fileName: ''
+                        name:'W',
+                        fileName:'WFr.mp3'
                     },
                     {
-                        lettre: 'S',
-                        fileName: ''
+                        name:'Y',
+                        fileName:'YFr.mp3'
                     },
                     {
-                        lettre: 'T',
-                        fileName: ''
+                        name:'Z',
+                        fileName:'ZFr.mp3'
+                    }
+                ],
+
+                days: [
+                    {
+                        name: 'lundi',
+                        fileName: 'lundi.mp3'
                     },
                     {
-                        lettre: 'U',
-                        fileName: ''
+                        name: 'mardi',
+                        fileName: 'mardi.mp3'
                     },
                     {
-                        lettre: 'V',
-                        fileName: ''
+                        name: 'mercredi',
+                        fileName: 'mercredi.mp3'
                     },
                     {
-                        lettre: 'W',
-                        fileName: ''
+                        name: 'jeudi',
+                        fileName: 'jeudi.mp3'
                     },
                     {
-                        lettre: 'X',
-                        fileName: ''
+                        name: 'vendredi',
+                        fileName: 'vendredi.mp3'
                     },
                     {
-                        lettre: 'Y',
-                        fileName: ''
+                        name: 'samedi',
+                        fileName: 'samedi.mp3'
                     },
                     {
-                        lettre: 'Z',
-                        fileName: ''
+                        name: 'dimanche',
+                        fileName: 'dimanche.mp3'
                     }
                 ],
                 numbers: [
                     {
-                        number: 0,
+                        name: 0,
                         fileName: 'zeroFr.mp3'
                     },
                     {
-                        number: 1,
+                        name: 1,
                         fileName: 'unFr.mp3'
                     },
                     {
-                        number: 2,
+                        name: 2,
                         fileName: 'deux.mp3'
                     },
                     {
-                        number: 3,
+                        name: 3,
                         fileName: 'trois.mp3'
                     },
                     {
-                        number: 4,
+                        name: 4,
                         fileName: 'quatre.mp3'
                     },
                     {
-                        number: 5,
+                        name: 5,
                         fileName: 'cinq.mp3'
                     },
                     {
-                        number: 6,
+                        name: 6,
                         fileName: 'sixFr.mp3'
                     },
                     {
-                        number: 7,
+                        name: 7,
                         fileName: 'sept.mp3'
                     },
                     {
-                        number: 8,
+                        name: 8,
                         fileName: 'huit.mp3'
                     },
                     {
-                        number: 9,
+                        name: 9,
                         fileName: 'neuf.mp3'
                     },
                     {
-                        number: 10,
+                        name: 10,
                         fileName: 'dix.mp3'
                     }
                 ]
@@ -359,8 +367,14 @@ angular.module('colorGameApp')
                     color: {key: 'name', gameImg: self.imageFolder + 'question.jpg'},
                     colorEn: {key: 'nameEn'}
                 },
-                alphanum : {
+                numbers : {
                     numbers : {key : 'fileName'}
+                },
+                days:{
+                    day : {key : 'fileName'}
+                },
+                letters:{
+                    letter : {key : 'fileName'}
                 }
             };
         }
