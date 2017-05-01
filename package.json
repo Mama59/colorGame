@@ -3,15 +3,18 @@
   "private": true,
   "scripts": {
     "test": "npm install -g grunt && bower install && grunt test",
-    "start": "npm install && npm install -g grunt && bower install  && grunt build && grunt serve"
+    "start": "grunt serve",
+    "deploy": "git push origin master && git push heroku master",
+    "postinstall": "npm build"
   },
-
   "dependencies": {
-    "bower": "^1.8.0",
-    "grunt-karma": "^2.0.0",
+    "angular": "^1.6.4",
     "autoprefixer-core": "^5.2.1",
+    "bower": "^1.8.0",
+    "express": "^4.15.2",
     "grunt": "^0.4.5",
     "grunt-angular-templates": "^0.5.7",
+    "grunt-build-control": "^0.7.1",
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "^0.5.0",
@@ -26,6 +29,7 @@
     "grunt-filerev": "^2.1.2",
     "grunt-google-cdn": "^0.4.3",
     "grunt-jscs": "^1.8.0",
+    "grunt-karma": "^2.0.0",
     "grunt-newer": "^1.1.0",
     "grunt-ng-annotate": "^0.9.2",
     "grunt-postcss": "^0.5.5",
@@ -40,6 +44,10 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "phantomjs-prebuilt": "^2.1.14",
     "time-grunt": "^1.0.0",
-    "grunt-build-control": "^0.7.1"
+    "window": "^3.1.6"
+  },
+  "engines": {
+    "node": "6.9.2",
+    "npm": "3.10.9"
   }
 }
