@@ -4,8 +4,7 @@
   "scripts": {
     "test": "npm install -g grunt && bower install && grunt test",
     "start": "npm install && npm install -g grunt && bower install && grunt serve",
-    "deploy": "git push origin master && git push heroku master",
-    "postinstall": "npm build"
+    "deploy": "git push origin master && git push heroku master"
   },
   "dependencies": {
     "angular": "^1.6.4",
