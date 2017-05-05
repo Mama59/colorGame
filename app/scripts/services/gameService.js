@@ -27,10 +27,6 @@ angular.module('colorGameApp')
             return audio;
         };
 
-        self.getNumbers = function () {
-
-        };
-
         self.getGames = function (params) {
             var colorsSelected = [];
             var type = params.type || 'colors';
